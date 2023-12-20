@@ -59,7 +59,10 @@ public class Main {
                 user1.setEmail(emai1l);
                 user1.setPassword(passwo1rd);
                 ResultSet resut = db.getUser(user1);
-                out.write(resut.toString()+"\n");
+                out = new BufferedWriter(new OutputStreamWriter(clientSocket.getOutputStream()));
+                JSONObject js = new JSONObject();
+                js.put("bool", resut.next());
+                out.write(js + "\n");
                 out.flush();
         }
     }

@@ -40,6 +40,4 @@ public class DataBaseHandler {
         return resSet;
     }
 
-
-
 }
