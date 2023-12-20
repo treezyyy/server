@@ -10,6 +10,7 @@ import java.net.InetAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.sql.Connection;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class Main {
@@ -18,6 +19,7 @@ public class Main {
     private static ServerSocket server;
     private static BufferedReader in;
     private static BufferedWriter out;
+    private static DataBaseHandler db;
     public static void Connect() throws IOException {
         server = new ServerSocket(8080, 0, InetAddress.getLocalHost());
         System.out.println("Сервер запущен!");
@@ -32,7 +34,7 @@ public class Main {
         out.write("alaxxx"+" \n");
         out.flush();
     }
-    public static void CommandReader(String arg_input) throws ParseException, SQLException, ClassNotFoundException {
+    public static void CommandReader(String arg_input) throws ParseException, SQLException, ClassNotFoundException, IOException {
         String[] args = arg_input.split(" ");
         String command = args[0];
         String json = arg_input.replaceAll(command, "").trim();
@@ -45,21 +47,25 @@ public class Main {
                 String name = (String) obj.get("name");
                 String email = (String) obj.get("email");
                 String password = (String) obj.get("password");
-                DataBaseHandler db = new DataBaseHandler();
                 User user = new User();
                 user.setName(name);
                 user.setEmail(email);
                 user.setPassword(password);
                 db.signUpUser(user);
-            case "info":
-                String namik;
-                String emailik;
-                String passwordik;
-
+            case "sign":
+                String emai1l = (String) obj.get("email");
+                String passwo1rd = (String) obj.get("password");
+                User user1 = new User();
+                user1.setEmail(emai1l);
+                user1.setPassword(passwo1rd);
+                ResultSet resut = db.getUser(user1);
+                out.write(resut.toString()+"\n");
+                out.flush();
         }
     }
 
     public static void main(String[] args) throws IOException, ParseException, SQLException, ClassNotFoundException {
+        db = new DataBaseHandler();
         Connect();
         while (true){
             clientSocket = server.accept();

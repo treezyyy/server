@@ -1,7 +1,4 @@
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import java.sql.*;
 
 public class DataBaseHandler {
 
@@ -27,6 +24,22 @@ public class DataBaseHandler {
             e.printStackTrace();
         }
     }
+
+    public ResultSet getUser(User user) {
+        ResultSet resSet = null;
+        String select = "SELECT * FROM " + Const.USER_TABLE + " WHERE " + Const.USERS_EMAIL + " = ? AND " + Const.USERS_PASSWORD + " = ?";
+
+        try {
+            PreparedStatement prSt = getDbConnection().prepareStatement(select);
+            prSt.setString(1, user.getEmail());
+            prSt.setString(2, user.getPassword());
+            resSet = prSt.executeQuery();
+        } catch (SQLException | ClassNotFoundException e){
+            e.printStackTrace();
+        }
+        return resSet;
+    }
+
 
 
 }
