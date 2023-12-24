@@ -5,6 +5,16 @@ public class User {
     private String email;
     private String password;
 
+    private double balance;
+
+    public double getBalance() {
+        return balance;
+    }
+
+    public void setBalance(double balance) {
+        this.balance = balance;
+    }
+
     public int getId() {
         return id;
     }

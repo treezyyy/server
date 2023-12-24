@@ -52,6 +52,7 @@ public class Main {
                 user.setEmail(email);
                 user.setPassword(password);
                 db.signUpUser(user);
+                break;
             case "sign":
                 String emai1l = (String) obj.get("email");
                 String passwo1rd = (String) obj.get("password");
@@ -64,6 +65,15 @@ public class Main {
                 js.put("bool", resut.next());
                 out.write(js + "\n");
                 out.flush();
+                break;
+            case "balance":
+                double amount = ((Long) obj.get("")).doubleValue();
+                String emails = (String) obj.get("email");
+                User user2 = new User();
+                user2.setBalance(amount);
+                user2.setEmail(emails);
+                db.UpdateBalance(user2);
+                break;
         }
     }
 

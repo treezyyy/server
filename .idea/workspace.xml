@@ -4,10 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="34cdb0c5-2996-4d95-a293-633fda84057a" name="Changes" comment="">
+    <list default="true" id="34cdb0c5-2996-4d95-a293-633fda84057a" name="Changes" comment="сервер">
+      <change afterPath="$PROJECT_DIR$/src/TestAlaxa.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Const.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Const.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DataBaseHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataBaseHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/User.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,10 +42,10 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "last_opened_file_path": "D:/mysql-connector-j-8.2.0/mysql-connector-j-8.2.0.jar",
-    "project.structure.last.edited": "Libraries",
+    "project.structure.last.edited": "SDKs",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.4",
-    "settings.editor.selected.configurable": "preferences.lookFeel"
+    "settings.editor.selected.configurable": "preferences.editor"
   }
 }]]></component>
   <component name="SliceToolwindowSettings">
@@ -58,7 +61,19 @@
       <option name="presentableId" value="Default" />
       <updated>1703013956908</updated>
     </task>
+    <task id="LOCAL-00001" summary="сервер">
+      <created>1703109011939</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1703109011939</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="сервер" />
+    <option name="LAST_COMMIT_MESSAGE" value="сервер" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

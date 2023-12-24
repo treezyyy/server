@@ -40,4 +40,16 @@ public class DataBaseHandler {
         return resSet;
     }
 
+    public void UpdateBalance(User user) throws SQLException, ClassNotFoundException {
+        String update = "UPDATE " + Const.USER_TABLE + " SET " + Const.USERS_BALANCE + " = " + Const.USERS_BALANCE + " + ? WHERE " + Const.USERS_EMAIL + " = ?";
+        //String update = "UPDATE " + Const.USER_TABLE + " SET " + Const.USERS_BALANCE + " = ? WHERE " + Const.USERS_EMAIL + " = ?";
+        try {
+            PreparedStatement prSt = getDbConnection().prepareStatement(update);
+            prSt.setDouble(1,user.getBalance());
+            prSt.setString(2, user.getEmail());
+            prSt.executeUpdate();
+        } catch (SQLException | ClassNotFoundException e){
+            e.printStackTrace();
+        }
+    }
 }
